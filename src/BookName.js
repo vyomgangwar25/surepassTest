@@ -1,16 +1,19 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-
-const BookName = () => {
+import LoadingShimmer from './LoadingShimmer';
+const BookName = ({loading}) => {
   const bookstoreItems = useSelector(state => state.book.items);
-
+   if(loading)
+   {
+    return<><LoadingShimmer/></>
+   }
   if (!bookstoreItems || bookstoreItems.length === 0) {
-    return <div>No books found</div>;
+    return <div className='pr-10 '>Enter Book name</div>;
   }
   console.log(bookstoreItems)
 
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="grid grid-cols-1 gap-4 mt-2">
       {bookstoreItems.map((bookGroup, index) => (
         bookGroup.items.map((book, bookIndex) => {
           const volumeInfo = book?.volumeInfo;
