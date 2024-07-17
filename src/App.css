@@ -36,6 +36,13 @@
     transform: rotate(360deg);
   }
 }
-*{
-  background-color:rgb(205, 156, 50);
+body{
+  background-color:#c1e8df;
+}
+html{
+  height: full;
+}
+.book-card{
+  background-image: linear-gradient(to top, #ffffff, #a2ded0);
+  background-repeat: no-repeat;
 }

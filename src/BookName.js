@@ -8,12 +8,13 @@ const BookName = ({loading}) => {
     return<><LoadingShimmer/></>
    }
   if (!bookstoreItems || bookstoreItems.length === 0) {
-    return <div className='pr-10 '>Enter Book name</div>;
+    return <div className='mt-20'>No book available</div>;
   }
   console.log(bookstoreItems)
 
   return (
-    <div className="grid grid-cols-1 gap-4 mt-2">
+    <div className='flex justify-center'>
+    <div className="grid grid-cols-4 gap-4 my-2">
       {bookstoreItems.map((bookGroup, index) => (
         bookGroup.items.map((book, bookIndex) => {
           const volumeInfo = book?.volumeInfo;
@@ -30,11 +31,11 @@ const BookName = ({loading}) => {
           }
 
           return (
-            <div key={`${index}-${bookIndex}`} className="border border-gray-200 p-4 rounded-lg shadow-md">
+            <div key={`${index}-${bookIndex}`} className="border book-card border-red-600 p-4 rounded-lg shadow-md w-[250px] min-h-[280px]">
               <ul>
                 <li className="mb-2">
                   <h1 className="text-xl font-bold mb-1">Title:</h1>
-                  <p>{title}</p>
+                  <p className='max-h-[100px] overflow-hidden'>{title}</p>
                 </li>
                 <li className="mb-2">
                   <h2 className="font-bold mb-1">Authors:</h2>
@@ -49,6 +50,7 @@ const BookName = ({loading}) => {
           );
         })
       ))}
+    </div>
     </div>
   );
 }

@@ -28,16 +28,16 @@ const fetchBooks=async()=>{
 } 
 
   return (
-    <div className='mt-10'>
-     <h1 className='mb-4 pr-10' style={{ fontWeight: 'bold' }}>Book Search Application</h1>
+    <div className='mt-2'>
+     <h1 className='mb-4 ' style={{ fontWeight: 'bold', fontSize: '24px' }}>Book Search Application</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" class="border border-gray-300 px-3 py-2  rounded-lg focus:outline-none  " 
+        <input type="text" class="border bg-[#FFFFFF] border-gray-300 px-3 py-2  rounded-lg focus:outline-none  " 
         placeholder="Search for books"
          
         value={searchText} onChange={(e)=>{
         setSearchText(e.target.value)
         }} />
-        <button type="submit" class="rounded-lg px-4 py-2 ml-2 bg-blue-500 text-white">Search</button>
+        <button type="submit" class="rounded-lg px-4 py-2 ml-2 bg-[#1C4D6D] text-white">Search</button>
         <BookName loading={loading}/>
       </form>
     </div>
